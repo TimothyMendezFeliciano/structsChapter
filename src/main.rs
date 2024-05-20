@@ -7,6 +7,7 @@ struct User {
     sign_in_count: u64,
 }
 
+struct AlwaysEqual;
 fn main() {
     println!("Hello, Templates!");
 
@@ -23,6 +24,8 @@ fn main() {
 
     println!("User1 is {}, {}, {}", user1.username, user1.email, user1.active);
     println!("User2 is {}, {}, {}", user2.username, user2.email, user2.active);
+
+    let subject = AlwaysEqual; // unit struct. Struct with no values.
 }
 
 fn update_syntax(user: User) -> User {
