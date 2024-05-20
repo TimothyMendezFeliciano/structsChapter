@@ -25,6 +25,13 @@ fn main() {
     println!("User2 is {}, {}, {}", user2.username, user2.email, user2.active);
 }
 
+fn update_syntax(user: User) -> User {
+    User {
+        email: String::from("new@email.com"),
+        ..user
+    }
+}
+
 fn create_user(email: &String) -> User {
     let _username = word_before_AT(&email);
     User {
@@ -38,10 +45,10 @@ fn create_user(email: &String) -> User {
 
 fn word_before_AT(s: &String) -> &str {
     let bytes: Vec<&str> = s.split('@').collect();
-    let mut first_word="";
+    let mut first_word = "";
     for w in bytes {
         first_word = w;
-        break
+        break;
     }
     &first_word
 }
