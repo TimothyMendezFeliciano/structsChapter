@@ -1,4 +1,7 @@
+mod rectangles;
+
 use std::io::Split;
+use crate::rectangles::rectangles;
 
 struct User {
     active: bool,
@@ -26,6 +29,8 @@ fn main() {
     println!("User2 is {}, {}, {}", user2.username, user2.email, user2.active);
 
     let subject = AlwaysEqual; // unit struct. Struct with no values.
+
+    rectangles();
 }
 
 fn update_syntax(user: User) -> User {
