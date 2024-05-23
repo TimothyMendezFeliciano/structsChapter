@@ -1,10 +1,18 @@
-pub fn rectangles() {
-    let width1: usize = 30;
-    let height1: usize = 50;
-
-    println!("The area of the rectangle is {} square pixels", area(width1,height1));
+struct Rectangle {
+    width: usize,
+    height: usize,
 }
 
-fn area(width: usize, height: usize) -> usize {
-    width * height
+pub fn rectangles() {
+    let rect1: Rectangle = Rectangle {
+        width: 50,
+        height: 30,
+    };
+
+    println!("The area of the rectangle is {} square pixels", area(&rect1)); // Let the function borrow the struct, so that the main function retains ownership.
+}
+
+// This provides a more descriptive understanding of the code
+fn area(rectangle: &Rectangle) -> usize {
+    rectangle.width * rectangle.height
 }
