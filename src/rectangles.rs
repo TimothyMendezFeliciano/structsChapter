@@ -11,6 +11,14 @@ impl Rectangle {
     fn can_hold(&self, rect2: &Rectangle) -> bool {
         (self.height * self.width) >= (rect2.height * rect2.width)
     }
+
+    fn square(size: usize) -> Self { // Values that return self are usually called "Associated Functions".
+        // And these are mainly used as constructors. Or, functions that return an object of the type.
+        Self {
+            width: size,
+            height: size,
+        }
+    }
 }
 
 pub fn rectangles() {
@@ -30,6 +38,9 @@ pub fn rectangles() {
 
     println!("Can rect1 hold rect2 inside? {}", rect1.can_hold(&methodRect));
     println!("Can rect2 hold rect1 inside? {}", methodRect.can_hold(&rect1));
+
+    let sq: Rectangle = Rectangle::square(24);
+
 }
 
 // This provides a more descriptive understanding of the code
